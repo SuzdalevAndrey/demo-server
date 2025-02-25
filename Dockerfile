@@ -12,7 +12,7 @@ RUN mvn clean package -DskipTests
 
 FROM openjdk:17-jdk-slim
 
-COPY --from=builder /app/target/*.jar /app/app.jar
+COPY --from=builder /app/target/demo-server-1.0-SNAPSHOT.jar /app/app.jar
 
 ENTRYPOINT ["java", "-jar", "/app/app.jar"]
 
